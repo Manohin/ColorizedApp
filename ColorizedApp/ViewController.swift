@@ -32,30 +32,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func redColorSliderAction() {
-        
         setLabelText(redValueLabel, redColorSlider)
         setColor()
     }
     
     @IBAction func greenColorSliderAction() {
-        
         setLabelText(greenValueLabel, greenColorSlider)
         setColor()
     }
     
     @IBAction func blueColorSliderAction() {
-        
         setLabelText(blueValueLabel, blueColorSlider)
         setColor()
     }
     
     private func setLabelText(_ label: UILabel, _ slider: UISlider) {
-        
         label.text = String(format: "%.2f", slider.value)
     }
     
     private func setColor() {
-        
         colorDisplayView.backgroundColor = UIColor(
             red: CGFloat(redColorSlider.value),
             green: CGFloat(greenColorSlider.value),
