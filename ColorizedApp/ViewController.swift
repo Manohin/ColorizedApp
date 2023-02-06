@@ -51,11 +51,7 @@ class ViewController: UIViewController {
     
     private func setLabelText(_ label: UILabel, _ slider: UISlider) {
         
-        label.text = slider.value.formatted(
-            .number.scale(1.0)
-            .notation(.compactName)
-            .grouping(.automatic)
-        )
+        label.text = String(format: "%.2f", slider.value)
     }
     
     private func setColor() {
@@ -63,7 +59,9 @@ class ViewController: UIViewController {
         colorDisplayView.backgroundColor = UIColor(
             red: CGFloat(redColorSlider.value),
             green: CGFloat(greenColorSlider.value),
-            blue: CGFloat(blueColorSlider.value), alpha: 1)
+            blue: CGFloat(blueColorSlider.value),
+            alpha: 1
+        )
     }
 }
 
