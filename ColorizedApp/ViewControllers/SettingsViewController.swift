@@ -37,7 +37,6 @@ final class SettingsViewController: UIViewController {
     @IBAction func doneButtonTapped() {
         delegate.setColor(for: colorDisplayView.backgroundColor!)
         dismiss(animated: true)
-        
     }
     
     @IBAction func redColorSliderAction() {
