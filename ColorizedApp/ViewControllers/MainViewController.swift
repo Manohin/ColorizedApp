@@ -21,6 +21,8 @@ class MainViewController: UIViewController {
    
     
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
+        
+        
         dismiss(animated: true)
     }
     
