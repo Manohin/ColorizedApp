@@ -14,20 +14,15 @@ protocol SettingsViewControllerDelegate: AnyObject {
 final class MainViewController: UIViewController {
     
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
-        
         dismiss(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard segue.identifier == "segueIdentifier" else { return }
-        
-        //  guard let navigationController = segue.destination as? UINavigationController else { return }
-        
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
         settingsVC.color = view.backgroundColor
         settingsVC.delegate = self
     }
-    
 }
 
 extension MainViewController: SettingsViewControllerDelegate {
