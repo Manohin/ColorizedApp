@@ -96,10 +96,10 @@
 		8ABC5AB529903A3D00B8C56A /* ColorizedApp */ = {
 			isa = PBXGroup;
 			children = (
-				8A5AE3D529A7EFC900848E70 /* App */,
 				8A5AE3D329A7EFAA00848E70 /* Models */,
 				8A5AE3D429A7EFB600848E70 /* ViewControllers */,
 				8A5AE3D629A7EFD900848E70 /* Storyboards */,
+				8A5AE3D529A7EFC900848E70 /* App */,
 				8ABC5ABF29903A3F00B8C56A /* Assets.xcassets */,
 			);
 			path = ColorizedApp;
