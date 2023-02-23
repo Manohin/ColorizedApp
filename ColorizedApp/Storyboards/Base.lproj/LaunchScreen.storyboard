@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,32 +12,32 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ColorizedApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qVu-Qn-B9b">
-                                <rect key="frame" x="62" y="90" width="196" height="54.5"/>
+                                <rect key="frame" x="130.33333333333331" y="137" width="169.33333333333331" height="55"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="34"/>
                                 <color key="textColor" red="0.0" green="0.67181435074029616" blue="0.74703787765106044" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RGB" translatesAutoresizingMaskIntoConstraints="NO" id="63X-43-GEv">
-                                <rect key="frame" x="62" y="192" width="196" height="184"/>
+                                <rect key="frame" x="117" y="374" width="209" height="184"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="196" id="8km-eE-Vea"/>
-                                    <constraint firstAttribute="height" constant="184" id="sBH-c0-yoo"/>
+                                    <constraint firstAttribute="width" constant="209" id="37m-sB-7Jj"/>
+                                    <constraint firstAttribute="height" constant="184" id="98r-RY-6EC"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="qVu-Qn-B9b" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="5WL-Fj-fzR"/>
-                            <constraint firstItem="63X-43-GEv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="AD4-0i-Ncg"/>
-                            <constraint firstItem="63X-43-GEv" firstAttribute="top" secondItem="qVu-Qn-B9b" secondAttribute="bottom" constant="47.5" id="EYH-2F-I9R"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qVu-Qn-B9b" secondAttribute="trailing" constant="62" id="OKm-m4-Sbg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="63X-43-GEv" secondAttribute="trailing" constant="62" id="fYi-FV-G8f"/>
-                            <constraint firstItem="qVu-Qn-B9b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="90" id="jmX-4R-LaU"/>
+                            <constraint firstItem="63X-43-GEv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5lH-Pa-QXk"/>
+                            <constraint firstItem="63X-43-GEv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="6.5" id="H6P-My-Gyb"/>
+                            <constraint firstItem="qVu-Qn-B9b" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RbN-tu-6Kc"/>
+                            <constraint firstItem="63X-43-GEv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="6.5" id="fcw-71-FUt"/>
+                            <constraint firstItem="qVu-Qn-B9b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="78" id="uid-BX-wOt"/>
+                            <constraint firstItem="63X-43-GEv" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="yPD-7X-YzO"/>
                         </constraints>
                     </view>
                 </viewController>

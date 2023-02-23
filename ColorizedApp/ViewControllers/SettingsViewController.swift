@@ -76,9 +76,3 @@ final class SettingsViewController: UIViewController {
         blueColorSlider.value = Float(colors.blue)
     }
 }
-
-
-
-
-
-
