@@ -27,10 +27,11 @@ final class SettingsViewController: UIViewController {
         
         colorDisplayView.layer.cornerRadius = 15
         colorDisplayView.backgroundColor = color
-        rgbToSlider()
+        setRgbToSlider()
         setLabelText(redValueLabel, redColorSlider)
         setLabelText(greenValueLabel, greenColorSlider)
         setLabelText(blueValueLabel, blueColorSlider)
+        
     }
     
     @IBAction func doneButtonTapped() {
@@ -69,16 +70,12 @@ final class SettingsViewController: UIViewController {
         )
     }
     
-    private func rgbToSlider() {
-        var fRed : CGFloat = 0
-        var fGreen : CGFloat = 0
-        var fBlue : CGFloat = 0
-        var fAlpha: CGFloat = 0
-        if color.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha) {
-            redColorSlider.value = Float(fRed * 2.55)
-            greenColorSlider.value = Float(fGreen * 2.55)
-            blueColorSlider.value = Float(fBlue * 2.55)
-        }
+    private func setRgbToSlider() {
+        let colors = CIColor(color: color)
+        
+        redColorSlider.value = Float(colors.red)
+        greenColorSlider.value = Float(colors.green)
+        blueColorSlider.value = Float(colors.blue)
     }
 }
 
