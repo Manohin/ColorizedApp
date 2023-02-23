@@ -27,18 +27,17 @@ final class SettingsViewController: UIViewController {
         
         colorDisplayView.layer.cornerRadius = 15
         colorDisplayView.backgroundColor = color
+        rgbToSlider()
         setLabelText(redValueLabel, redColorSlider)
         setLabelText(greenValueLabel, greenColorSlider)
         setLabelText(blueValueLabel, blueColorSlider)
-        
-        rgbToSlider()
     }
     
     @IBAction func doneButtonTapped() {
         
         delegate.setColor(for: colorDisplayView.backgroundColor!)
         dismiss(animated: true)
-       
+        
     }
     
     @IBAction func redColorSliderAction() {
@@ -56,9 +55,6 @@ final class SettingsViewController: UIViewController {
         setColor()
     }
     
-    
-    
-    
     private func setLabelText(_ label: UILabel, _ slider: UISlider) {
         label.text = String(format: "%.2f", slider.value)
     }
@@ -73,7 +69,7 @@ final class SettingsViewController: UIViewController {
         )
     }
     
-    func rgbToSlider() {
+    private func rgbToSlider() {
         var fRed : CGFloat = 0
         var fGreen : CGFloat = 0
         var fBlue : CGFloat = 0
@@ -90,4 +86,4 @@ final class SettingsViewController: UIViewController {
 
 
 
-    
+

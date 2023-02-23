@@ -11,28 +11,22 @@ protocol SettingsViewControllerDelegate: AnyObject {
     func setColor(for color: UIColor)
 }
 
-
-class MainViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-   
+final class MainViewController: UIViewController {
     
     @IBAction func settingsButton(_ sender: UIBarButtonItem) {
-        
         
         dismiss(animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       guard let settingsVC = segue.destination as? SettingsViewController else { return }
+        guard segue.identifier == "segueIdentifier" else { return }
         
+        //  guard let navigationController = segue.destination as? UINavigationController else { return }
+        
+        guard let settingsVC = segue.destination as? SettingsViewController else { return }
         settingsVC.color = view.backgroundColor
         settingsVC.delegate = self
     }
-    
     
 }
 
@@ -40,6 +34,4 @@ extension MainViewController: SettingsViewControllerDelegate {
     func setColor(for color: UIColor) {
         view.backgroundColor = color
     }
-    
-    
 }
