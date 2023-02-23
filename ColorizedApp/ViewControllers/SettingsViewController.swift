@@ -35,7 +35,8 @@ final class SettingsViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped() {
-        delegate.setColor(for: colorDisplayView.backgroundColor!)
+        guard let backgroundColor = colorDisplayView.backgroundColor else { return }
+        delegate.setColor(for: backgroundColor)
         dismiss(animated: true)
     }
     
