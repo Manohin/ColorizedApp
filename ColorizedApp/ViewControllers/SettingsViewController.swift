@@ -20,6 +20,7 @@ final class SettingsViewController: UIViewController {
     @IBOutlet var colorDisplayView: UIView!
     
     var color: UIColor!
+    
     unowned var delegate: SettingsViewControllerDelegate!
     
     override func viewDidLoad() {
@@ -31,11 +32,9 @@ final class SettingsViewController: UIViewController {
         setLabelText(redValueLabel, redColorSlider)
         setLabelText(greenValueLabel, greenColorSlider)
         setLabelText(blueValueLabel, blueColorSlider)
-        
     }
     
     @IBAction func doneButtonTapped() {
-        
         delegate.setColor(for: colorDisplayView.backgroundColor!)
         dismiss(animated: true)
         
@@ -61,7 +60,6 @@ final class SettingsViewController: UIViewController {
     }
     
     private func setColor() {
-        
         colorDisplayView.backgroundColor = UIColor(
             red: CGFloat(redColorSlider.value),
             green: CGFloat(greenColorSlider.value),
@@ -72,7 +70,7 @@ final class SettingsViewController: UIViewController {
     
     private func setRgbToSlider() {
         let colors = CIColor(color: color)
-        
+
         redColorSlider.value = Float(colors.red)
         greenColorSlider.value = Float(colors.green)
         blueColorSlider.value = Float(colors.blue)
