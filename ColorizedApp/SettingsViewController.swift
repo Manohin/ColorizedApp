@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SettingsViewController.swift
 //  ColorizedApp
 //
 //  Created by Alexey Manokhin on 05.02.2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
+final class SettingsViewController: UIViewController {
     
     @IBOutlet var redValueLabel: UILabel!
     @IBOutlet var greenValueLabel: UILabel!
@@ -19,6 +19,13 @@ final class ViewController: UIViewController {
     
     @IBOutlet var colorDisplayView: UIView!
     
+    
+    
+    
+    var color: UIColor!
+    unowned var delegate: SettingsViewControllerDelegate!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,8 +35,16 @@ final class ViewController: UIViewController {
         setLabelText(greenValueLabel, greenColorSlider)
         setLabelText(blueValueLabel, blueColorSlider)
         
-        setColor()
+        colorDisplayView.backgroundColor = color
     }
+    
+    @IBAction func doneButtonTapped() {
+        
+        delegate.setColor(for: colorDisplayView.backgroundColor!)
+        dismiss(animated: true)
+       
+    }
+    
     
     @IBAction func redColorSliderAction() {
         setLabelText(redValueLabel, redColorSlider)
@@ -45,6 +60,9 @@ final class ViewController: UIViewController {
         setLabelText(blueValueLabel, blueColorSlider)
         setColor()
     }
+    
+    
+    
     
     private func setLabelText(_ label: UILabel, _ slider: UISlider) {
         label.text = String(format: "%.2f", slider.value)
