@@ -19,6 +19,12 @@ final class SettingsViewController: UIViewController {
     
     @IBOutlet var colorDisplayView: UIView!
     
+    
+    @IBOutlet var redTextField: UITextField!
+    @IBOutlet var greenTextField: UITextField!
+    @IBOutlet var blueTextField: UITextField!
+    
+    
     var color: UIColor!
     
     unowned var delegate: SettingsViewControllerDelegate!
@@ -29,9 +35,9 @@ final class SettingsViewController: UIViewController {
         colorDisplayView.layer.cornerRadius = 15
         colorDisplayView.backgroundColor = color
         setRgbToSlider()
-        setLabelText(redValueLabel, redColorSlider)
-        setLabelText(greenValueLabel, greenColorSlider)
-        setLabelText(blueValueLabel, blueColorSlider)
+        setText(redValueLabel, redTextField, redColorSlider)
+        setText(greenValueLabel, greenTextField, greenColorSlider)
+        setText(blueValueLabel, blueTextField, blueColorSlider)
     }
     
     @IBAction func doneButtonTapped() {
@@ -41,22 +47,23 @@ final class SettingsViewController: UIViewController {
     }
     
     @IBAction func redColorSliderAction() {
-        setLabelText(redValueLabel, redColorSlider)
+        setText(redValueLabel, redTextField, redColorSlider)
         setColor()
     }
     
     @IBAction func greenColorSliderAction() {
-        setLabelText(greenValueLabel, greenColorSlider)
+        setText(greenValueLabel, greenTextField, greenColorSlider)
         setColor()
     }
     
     @IBAction func blueColorSliderAction() {
-        setLabelText(blueValueLabel, blueColorSlider)
+        setText(blueValueLabel, blueTextField, blueColorSlider)
         setColor()
     }
     
-    private func setLabelText(_ label: UILabel, _ slider: UISlider) {
+    private func setText(_ label: UILabel,_ textField: UITextField, _ slider: UISlider) {
         label.text = String(format: "%.2f", slider.value)
+        textField.text = String(format: "%.2f", slider.value)
     }
     
     private func setColor() {
@@ -75,4 +82,22 @@ final class SettingsViewController: UIViewController {
         greenColorSlider.value = Float(colors.green)
         blueColorSlider.value = Float(colors.blue)
     }
+    
+//    private func addDoneButton(_ textField: UITextField) {
+//           let toolbarKey = UIToolbar()
+//           textField.inputAccessoryView = toolbarKey
+//        toolbarKey.sizeToFit()
+//
+//           let doneButton = UIBarButtonItem(title: "Done",
+//                                            style: .done,
+//                                            target: self,
+//                                            action: #selector(didTapDone))
+//           let flexBarButton = UIBarButtonItem(barButtonSystemItem: .fixedSpace,
+//                                               target: nil,
+//                                               action: nil)
+//        toolbarKey.setItems([flexBarButton, doneButton], animated: false)
+//       }
+    
 }
+
+
