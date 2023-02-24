@@ -34,10 +34,18 @@ final class SettingsViewController: UIViewController {
         
         colorDisplayView.layer.cornerRadius = 15
         colorDisplayView.backgroundColor = color
+        
         setRgbToSlider()
+        
         setText(redValueLabel, redTextField, redColorSlider)
         setText(greenValueLabel, greenTextField, greenColorSlider)
         setText(blueValueLabel, blueTextField, blueColorSlider)
+        
+        redTextField.delegate = self
+        greenTextField.delegate = self
+        blueTextField.delegate = self
+        
+        
     }
     
     @IBAction func doneButtonTapped() {
@@ -82,22 +90,22 @@ final class SettingsViewController: UIViewController {
         greenColorSlider.value = Float(colors.green)
         blueColorSlider.value = Float(colors.blue)
     }
-    
-//    private func addDoneButton(_ textField: UITextField) {
-//           let toolbarKey = UIToolbar()
-//           textField.inputAccessoryView = toolbarKey
-//        toolbarKey.sizeToFit()
-//
-//           let doneButton = UIBarButtonItem(title: "Done",
-//                                            style: .done,
-//                                            target: self,
-//                                            action: #selector(didTapDone))
-//           let flexBarButton = UIBarButtonItem(barButtonSystemItem: .fixedSpace,
-//                                               target: nil,
-//                                               action: nil)
-//        toolbarKey.setItems([flexBarButton, doneButton], animated: false)
-//       }
-    
+
+// MARK: - UITextFieldDelegate
+
+
+extension SettingsViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        guard let value = textField.text else { return }
+        guard let floatValue = Float(value) else { return }
+        
+        switch textField {
+        case redTextField:
+            redColorSlider.value = floatValue
+        case greenTextField:
+            greenColorSlider.value = floatValue
+        default:
+            blueColorSlider.value = floatValue
+        }
+    }
 }
-
-
