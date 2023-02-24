@@ -85,12 +85,12 @@ final class SettingsViewController: UIViewController {
     
     private func setRgbToSlider() {
         let colors = CIColor(color: color)
-
+        
         redColorSlider.value = Float(colors.red)
         greenColorSlider.value = Float(colors.green)
         blueColorSlider.value = Float(colors.blue)
     }
-
+}
 // MARK: - UITextFieldDelegate
 
 
