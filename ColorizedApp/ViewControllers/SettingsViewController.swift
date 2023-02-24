@@ -90,6 +90,7 @@ final class SettingsViewController: UIViewController {
         greenColorSlider.value = Float(colors.green)
         blueColorSlider.value = Float(colors.blue)
     }
+    
 }
 // MARK: - UITextFieldDelegate
 
@@ -107,5 +108,7 @@ extension SettingsViewController: UITextFieldDelegate {
         default:
             blueColorSlider.value = floatValue
         }
+        setColor()
     }
+    
 }
