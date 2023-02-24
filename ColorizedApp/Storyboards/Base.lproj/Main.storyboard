@@ -73,36 +73,36 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="QhY-mk-W9F">
-                                        <rect key="frame" x="50" y="4" width="31" height="114"/>
+                                        <rect key="frame" x="50" y="4" width="26" height="114"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jgr-g1-ZkI">
-                                                <rect key="frame" x="0.0" y="0.0" width="31" height="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="26" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jsk-bg-Jny">
-                                                <rect key="frame" x="0.0" y="48" width="31" height="18"/>
+                                                <rect key="frame" x="0.0" y="48" width="26" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="kfy-7e-myi">
-                                                <rect key="frame" x="0.0" y="96" width="31" height="18"/>
+                                                <rect key="frame" x="0.0" y="96" width="26" height="18"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="31" id="Szp-U4-ukd"/>
+                                            <constraint firstAttribute="width" constant="26" id="TeX-Vn-xpz"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7eg-6e-k4c">
-                                        <rect key="frame" x="93" y="1" width="137" height="120"/>
+                                        <rect key="frame" x="88" y="1" width="142" height="120"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.42999999999999999" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Am8-x6-Fzo">
-                                                <rect key="frame" x="-2" y="0.0" width="141" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="146" height="31"/>
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                 <color key="maximumTrackTintColor" systemColor="separatorColor"/>
                                                 <connections>
@@ -110,7 +110,7 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.34999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-sz-uP0">
-                                                <rect key="frame" x="-2" y="45" width="141" height="31"/>
+                                                <rect key="frame" x="-2" y="45" width="146" height="31"/>
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                                 <color key="maximumTrackTintColor" systemColor="placeholderTextColor"/>
                                                 <connections>
@@ -118,7 +118,7 @@
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.64000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="glU-jL-OF8">
-                                                <rect key="frame" x="-2" y="90" width="141" height="31"/>
+                                                <rect key="frame" x="-2" y="90" width="146" height="31"/>
                                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                                 <color key="maximumTrackTintColor" systemColor="placeholderTextColor"/>
                                                 <connections>
