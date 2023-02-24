@@ -42,6 +42,7 @@ final class SettingsViewController: UIViewController {
         redTextField.delegate = self
         greenTextField.delegate = self
         blueTextField.delegate = self
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -92,20 +93,19 @@ final class SettingsViewController: UIViewController {
         blueColorSlider.value = Float(colors.blue)
     }
     
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, handler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(
             title: title,
             message: message,
             preferredStyle: .alert)
         
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okButton = UIAlertAction(title: "OK", style: .cancel, handler: handler)
         
-        alert.addAction(okAction)
+        alert.addAction(okButton)
         
         present(alert, animated: true)
     }
 }
-
 // MARK: - UITextFieldDelegate
 
 extension SettingsViewController: UITextFieldDelegate {
@@ -113,8 +113,27 @@ extension SettingsViewController: UITextFieldDelegate {
         
         guard let value = textField.text else { return }
         guard let floatValue = Float(value) else {
-            showAlert(title: "Внимание!", message: "Введите корректное значение!")
-            textField.text = ""
+            showAlert(title: "Внимание!", message: "Введите корректное значение от 0 до 1.00") {_ in
+                textField.text = ""
+            }
+            
+            return
+        }
+        guard floatValue <= 1.0 else {
+            if textField == redTextField {
+                redColorSlider.setValue(1.00, animated: true)
+                redValueLabel.text = String(format: "%.2f", 1.00)
+                redTextField.text = "1.00"
+            } else if textField == greenTextField {
+                greenColorSlider.setValue(1.00, animated: true)
+                greenValueLabel.text = String(format: "%.2f", 1.00)
+                greenTextField.text = "1.00"
+            } else {
+                blueColorSlider.setValue(1.00, animated: true)
+                blueValueLabel.text = String(format: "%.2f", 1.00)
+                blueTextField.text = "1.00"
+            }
+            setColor()
             return
         }
         
