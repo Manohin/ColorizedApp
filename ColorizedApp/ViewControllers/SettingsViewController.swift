@@ -91,14 +91,32 @@ final class SettingsViewController: UIViewController {
         blueColorSlider.value = Float(colors.blue)
     }
     
+    private func showAlert(title: String, message: String) {
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+    }
+    
 }
 // MARK: - UITextFieldDelegate
 
 
 extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
         guard let value = textField.text else { return }
-        guard let floatValue = Float(value) else { return }
+        guard let floatValue = Float(value) else {
+            showAlert(title: "Внимание!", message: "Введите корректное значение!")
+            textField.text = ""
+            return
+        }
         
         switch textField {
         case redTextField:
