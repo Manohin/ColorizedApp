@@ -103,7 +103,6 @@ final class SettingsViewController: UIViewController {
         
         present(alert, animated: true)
     }
-    
 }
 // MARK: - UITextFieldDelegate
 
@@ -121,12 +120,14 @@ extension SettingsViewController: UITextFieldDelegate {
         switch textField {
         case redTextField:
             redColorSlider.value = floatValue
+            redValueLabel.text = String(format: "%.2f", floatValue)
         case greenTextField:
             greenColorSlider.value = floatValue
+            greenValueLabel.text = String(format: "%.2f", floatValue)
         default:
             blueColorSlider.value = floatValue
+            blueValueLabel.text = String(format: "%.2f", floatValue)
         }
         setColor()
     }
-    
 }
