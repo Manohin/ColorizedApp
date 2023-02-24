@@ -119,13 +119,13 @@ extension SettingsViewController: UITextFieldDelegate {
         
         switch textField {
         case redTextField:
-            redColorSlider.value = floatValue
+            redColorSlider.setValue(floatValue, animated: true)
             redValueLabel.text = String(format: "%.2f", floatValue)
         case greenTextField:
-            greenColorSlider.value = floatValue
+            greenColorSlider.setValue(floatValue, animated: true)
             greenValueLabel.text = String(format: "%.2f", floatValue)
         default:
-            blueColorSlider.value = floatValue
+            blueColorSlider.setValue(floatValue, animated: true)
             blueValueLabel.text = String(format: "%.2f", floatValue)
         }
         setColor()
