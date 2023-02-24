@@ -45,7 +45,15 @@ final class SettingsViewController: UIViewController {
         greenTextField.delegate = self
         blueTextField.delegate = self
         
+        addDoneButton(textField: redTextField)
+        addDoneButton(textField: greenTextField)
+        addDoneButton(textField: blueTextField)
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
     }
     
     @IBAction func doneButtonTapped() {
@@ -103,7 +111,17 @@ final class SettingsViewController: UIViewController {
         
         present(alert, animated: true)
     }
-}
+    
+    private func addDoneButton(textField: UITextField) {
+        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: .none)
+        self.tabBarController?.navigationItem.rightBarButtonItems = [rightBarButtonItem]
+    }
+        @objc private func call_Method () {
+        print("Click")
+        }
+
+    }
+    
 // MARK: - UITextFieldDelegate
 
 
