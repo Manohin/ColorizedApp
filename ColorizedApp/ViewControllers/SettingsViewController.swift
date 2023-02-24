@@ -19,11 +19,9 @@ final class SettingsViewController: UIViewController {
     
     @IBOutlet var colorDisplayView: UIView!
     
-    
     @IBOutlet var redTextField: UITextField!
     @IBOutlet var greenTextField: UITextField!
     @IBOutlet var blueTextField: UITextField!
-    
     
     var color: UIColor!
     
@@ -44,7 +42,6 @@ final class SettingsViewController: UIViewController {
         redTextField.delegate = self
         greenTextField.delegate = self
         blueTextField.delegate = self
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -110,7 +107,6 @@ final class SettingsViewController: UIViewController {
 }
 
 // MARK: - UITextFieldDelegate
-
 
 extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
