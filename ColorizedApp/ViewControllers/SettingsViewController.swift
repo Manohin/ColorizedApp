@@ -105,49 +105,39 @@ final class SettingsViewController: UIViewController {
         
         present(alert, animated: true)
     }
+    
+    private func update(value: Float, newValue: Float, for textField: UITextField) {
+        if textField == redTextField {
+            redColorSlider.setValue(newValue, animated: true)
+            redValueLabel.text = String(format: "%.2f", newValue)
+            redTextField.text = String(newValue)
+        } else if textField == greenTextField {
+            greenColorSlider.setValue(newValue, animated: true)
+            greenValueLabel.text = String(format: "%.2f", newValue)
+            greenTextField.text = String(newValue)
+        } else {
+            blueColorSlider.setValue(newValue, animated: true)
+            blueValueLabel.text = String(format: "%.2f", newValue)
+            blueTextField.text = String(newValue)
+        }
+        setColor()
+    }
 }
 // MARK: - UITextFieldDelegate
 
 extension SettingsViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        
         guard let value = textField.text else { return }
         guard let floatValue = Float(value) else {
             showAlert(title: "Внимание!", message: "Введите корректное значение от 0 до 1.00") {_ in
                 textField.text = ""
             }
-            
             return
         }
         guard floatValue <= 1.0 else {
-            if textField == redTextField {
-                redColorSlider.setValue(1.00, animated: true)
-                redValueLabel.text = String(format: "%.2f", 1.00)
-                redTextField.text = "1.00"
-            } else if textField == greenTextField {
-                greenColorSlider.setValue(1.00, animated: true)
-                greenValueLabel.text = String(format: "%.2f", 1.00)
-                greenTextField.text = "1.00"
-            } else {
-                blueColorSlider.setValue(1.00, animated: true)
-                blueValueLabel.text = String(format: "%.2f", 1.00)
-                blueTextField.text = "1.00"
-            }
-            setColor()
+            update(value: floatValue, newValue: 1.00, for: textField)
             return
         }
-        
-        switch textField {
-        case redTextField:
-            redColorSlider.setValue(floatValue, animated: true)
-            redValueLabel.text = String(format: "%.2f", floatValue)
-        case greenTextField:
-            greenColorSlider.setValue(floatValue, animated: true)
-            greenValueLabel.text = String(format: "%.2f", floatValue)
-        default:
-            blueColorSlider.setValue(floatValue, animated: true)
-            blueValueLabel.text = String(format: "%.2f", floatValue)
-        }
-        setColor()
+        update(value: floatValue, newValue: floatValue, for: textField)
     }
 }
