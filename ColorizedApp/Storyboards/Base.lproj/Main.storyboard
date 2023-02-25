@@ -21,7 +21,6 @@
                     <navigationItem key="navigationItem" id="JyY-Ec-gEP">
                         <barButtonItem key="rightBarButtonItem" systemItem="compose" id="vl1-j7-1Br">
                             <connections>
-                                <action selector="settingsButton:" destination="ncE-zQ-LSF" id="gbX-Ry-SSY"/>
                                 <segue destination="BYZ-38-t0r" kind="presentation" identifier="segueIdentifier" modalPresentationStyle="fullScreen" id="smC-5b-JCg"/>
                             </connections>
                         </barButtonItem>

@@ -13,10 +13,6 @@ protocol SettingsViewControllerDelegate: AnyObject {
 
 final class MainViewController: UIViewController {
     
-    @IBAction func settingsButton(_ sender: UIBarButtonItem) {
-        dismiss(animated: true)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let settingsVC = segue.destination as? SettingsViewController else { return }
         settingsVC.color = view.backgroundColor
