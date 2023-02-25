@@ -42,7 +42,6 @@ final class SettingsViewController: UIViewController {
         redTextField.delegate = self
         greenTextField.delegate = self
         blueTextField.delegate = self
-        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -56,18 +55,15 @@ final class SettingsViewController: UIViewController {
         dismiss(animated: true)
     }
     
-    @IBAction func redColorSliderAction() {
-        setText(redValueLabel, redTextField, redColorSlider)
-        setColor()
-    }
-    
-    @IBAction func greenColorSliderAction() {
-        setText(greenValueLabel, greenTextField, greenColorSlider)
-        setColor()
-    }
-    
-    @IBAction func blueColorSliderAction() {
-        setText(blueValueLabel, blueTextField, blueColorSlider)
+    @IBAction func sliderAction(_ sender: UISlider) {
+        switch sender {
+        case redColorSlider:
+            setText(redValueLabel, redTextField, redColorSlider)
+        case greenColorSlider:
+            setText(greenValueLabel, greenTextField, greenColorSlider)
+        default:
+            setText(blueValueLabel, blueTextField, blueColorSlider)
+        }
         setColor()
     }
     

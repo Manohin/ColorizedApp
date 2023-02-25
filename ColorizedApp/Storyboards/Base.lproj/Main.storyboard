@@ -105,7 +105,7 @@
                                                 <color key="tintColor" systemColor="systemRedColor"/>
                                                 <color key="maximumTrackTintColor" systemColor="separatorColor"/>
                                                 <connections>
-                                                    <action selector="redColorSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="Fz9-Ff-4UR"/>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="xF1-f4-HZA"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.34999999999999998" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="TBx-sz-uP0">
@@ -113,7 +113,7 @@
                                                 <color key="tintColor" systemColor="systemGreenColor"/>
                                                 <color key="maximumTrackTintColor" systemColor="placeholderTextColor"/>
                                                 <connections>
-                                                    <action selector="greenColorSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="DVg-g1-Zlb"/>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="LEf-0g-ycT"/>
                                                 </connections>
                                             </slider>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.64000000000000001" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="glU-jL-OF8">
@@ -121,7 +121,7 @@
                                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                                 <color key="maximumTrackTintColor" systemColor="placeholderTextColor"/>
                                                 <connections>
-                                                    <action selector="blueColorSliderAction" destination="BYZ-38-t0r" eventType="valueChanged" id="jIN-Ek-1rX"/>
+                                                    <action selector="sliderAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="yw3-jm-99F"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -179,14 +179,14 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="blueColorSlider" destination="glU-jL-OF8" id="efi-WS-S73"/>
+                        <outlet property="blueColorSlider" destination="glU-jL-OF8" id="s1k-hA-qUe"/>
                         <outlet property="blueTextField" destination="62I-iF-8OR" id="Ysn-rb-73i"/>
                         <outlet property="blueValueLabel" destination="kfy-7e-myi" id="Uxi-3g-55C"/>
                         <outlet property="colorDisplayView" destination="kW4-a3-pAn" id="PzG-11-045"/>
-                        <outlet property="greenColorSlider" destination="TBx-sz-uP0" id="qNx-ma-qMP"/>
+                        <outlet property="greenColorSlider" destination="TBx-sz-uP0" id="hSR-m5-dgW"/>
                         <outlet property="greenTextField" destination="XQF-3d-vO7" id="QeD-DA-0Sb"/>
                         <outlet property="greenValueLabel" destination="jsk-bg-Jny" id="4TE-am-hvq"/>
-                        <outlet property="redColorSlider" destination="Am8-x6-Fzo" id="J4D-DX-VBM"/>
+                        <outlet property="redColorSlider" destination="Am8-x6-Fzo" id="zfl-YG-Lt2"/>
                         <outlet property="redTextField" destination="8hi-3L-4xS" id="vdJ-wQ-7PD"/>
                         <outlet property="redValueLabel" destination="Jgr-g1-ZkI" id="lJB-jM-WJ4"/>
                     </connections>
