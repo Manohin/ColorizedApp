@@ -161,7 +161,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="doneButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="waO-Ae-YAx"/>
-                                    <segue destination="HaP-tl-mqr" kind="presentation" modalPresentationStyle="fullScreen" id="SLW-qU-qz5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -203,7 +202,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HaP-tl-mqr" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hxW-yt-BDl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -213,7 +212,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhE-7a-ynH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-660" y="-30.633802816901408"/>
+            <point key="canvasLocation" x="-482" y="-31"/>
         </scene>
     </scenes>
     <resources>
