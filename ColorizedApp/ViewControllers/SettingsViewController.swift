@@ -127,13 +127,38 @@ extension SettingsViewController: UITextFieldDelegate {
         guard let floatValue = Float(value) else {
             showAlert(title: "Внимание!", message: "Введите корректное значение от 0 до 1.00") {_ in
                 textField.text = ""
+                textField.becomeFirstResponder()
             }
             return
         }
-        guard floatValue <= 1.0 else {
+        guard floatValue <= 1.00 else {
             update(value: floatValue, newValue: 1.00, for: textField)
             return
         }
         update(value: floatValue, newValue: floatValue, for: textField)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        let keyboardToolbar = UIToolbar()
+        keyboardToolbar.sizeToFit()
+        textField.inputAccessoryView = keyboardToolbar
+        
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done, target: textField, action: #selector(resignFirstResponder)
+        )
+        let flexBarButton = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil, action: nil
+        )
+        
+        keyboardToolbar.items = [flexBarButton, doneButton]
+    }
 }
+
+
+    
+
