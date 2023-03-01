@@ -38,10 +38,6 @@ final class SettingsViewController: UIViewController {
         setText(redValueLabel, redTextField, redColorSlider)
         setText(greenValueLabel, greenTextField, greenColorSlider)
         setText(blueValueLabel, blueTextField, blueColorSlider)
-        
-     // redTextField.delegate = self
-      //  greenTextField.delegate = self
-       //  blueTextField.delegate = self
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
